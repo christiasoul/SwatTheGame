@@ -4,10 +4,10 @@
 public interface ability{
 
 
-	bool levelUp ();
-	bool activate();
-	bool use (target setTarget);
-	bool cancel();
+	bool LevelUp ();
+	bool Activate();
+	bool Use (target setTarget);
+	bool Cancel();
 
 	// Use this for initialization
 
@@ -22,11 +22,13 @@ public abstract class abilityStore : ability{
 	protected string abilityName;
 	protected target.unitType [] typeTargatables;
 	protected byte teamTargatables;
+	protected float windUpTime;
+	protected float followThrough;
 
-	public abstract bool levelUp();
-	public abstract bool activate(); // use to change the cursor after clicking the ability
-	public abstract bool use (target setTarget);  // after clicking on a target, the ability is used on that target
-	public abstract bool cancel(); // stops activated
+	public abstract bool LevelUp();
+	public abstract bool Activate(); // use to change the cursor after clicking the ability
+	public abstract bool Use (target setTarget);  // after clicking on a target, the ability is used on that target
+	public abstract bool Cancel(); // stops activated
 
 
 }
@@ -38,8 +40,35 @@ public abstract class classAbilities{
 
 }
 
+public abstract class attack : ability {
+
+	public enum aimType{HITSCAN, CONE, PATH, MINE, GRENADE, MELEE}
+	protected weaponHeld myWeapon;
+	protected float timeUntilActive;
+
+	public override bool LevelUp(){ return false;}
+	public abstract bool Activate(); // use to change the cursor after clicking the ability
+	public abstract bool Use (target setTarget);  // after clicking on a target, the ability is used on that target
+	public abstract bool Cancel(); // stops activated
+
+	public abstract int GetAimType ();
+
+	public bool IncreaseAmmoLevel (){
+
+	}
+
+	public bool DecreaseAmmoLevel (){
+
+	}
+
+	public bool SetAmmoLevel (){
+
+	}
+
+}
+
 public class abilityTest : abilityStore{
-	override public bool levelUp(){
+	override public bool LevelUp(){
 		curLevel++;
 	}
 }
@@ -49,7 +78,7 @@ public class doctorAbilities : classAbilities{
 	
 	private class treatWound : abilityStore{
 
-		override public bool levelUp(){
+		override public bool LevelUp(){
 			if (Input.GetKeyDown ("Self Target")) {
 
 

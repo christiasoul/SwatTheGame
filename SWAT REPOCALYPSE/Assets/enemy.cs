@@ -6,4 +6,6 @@ public class enemy : unit {
 
 	private bool isActive;
 
+
+
 }

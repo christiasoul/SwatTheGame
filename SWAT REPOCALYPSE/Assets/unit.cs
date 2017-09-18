@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class unit : target {
 
-	private float healthMax;
-	private float healthCur;
-	private float healthHold; // holds float for regen
-	private float healthRegen;
-	private float energyMax;
-	private float energyCur;
-	private float energyRegen;
+	protected float healthMax;
+	protected float healthCur;
+	protected float healthHold; // holds float for regen
+	protected float healthRegen;
+	protected float energyMax;
+	protected float energyCur;
+	protected float energyRegen;
 
+	protected float timeUnavailable = 0;
+	protected bool available = true;
 
-
-	private float moveSpeed;
-	private weapon [] myWeapons;
-	private weapon.damageType [] weaknesses;
-	private weapon.damageType [] strengths;
-	private int armor;
+	protected float moveSpeed;
+	protected weaponHeld [] myWeapons;
+	protected weaponHeld.damageType [] weaknesses;
+	protected weaponHeld.damageType [] strengths;
+	protected int armor;
 
 	public bool dealDamage (float damage){
 		healthCur -= damage;
@@ -29,7 +30,7 @@ public class unit : target {
 		}
 	}
 
-	public bool dealDamage(float damage, int armorPierce , weapon.damageType damType ){
+	public bool dealDamage(float damage, int armorPierce , weaponHeld.damageType damType ){
 		float mult = 1;
 		for (int i = 0; i < weaknesses.Length; i++) {
 			if (damType == weaknesses [i]) {
@@ -47,8 +48,15 @@ public class unit : target {
 
 	}
 
-
-
+	public bool isAvailable(){
+		return available;
+	}
+	public void setAvailable(){
+		available = true;
+	}
+	public void setNotAvailable(){
+		available = false;
+	}
 	
 
 }

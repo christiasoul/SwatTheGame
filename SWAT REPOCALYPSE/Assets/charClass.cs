@@ -29,7 +29,7 @@ public class charClass : MonoBehaviour {
 
 	private classLabel myClass;
 
-	private weapon myWeapon;
+	private weaponHeld myWeapon;
 
 	private float wFireRate;
 	private int wDamage;

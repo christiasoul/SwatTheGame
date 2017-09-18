@@ -1,0 +1,55 @@
+"Assault Rifle" : 
+.4, 1.2, .4, 1.2, 
+35, 75, 55, 105,
+5, 2, 5, 2,
+200, 250, 200, 250,
+5, 0, 5, 0,
+1, 1, 2, 2, 4, 1
+.1, .55, .1, .55,
+2, 3.2, 2.2, 3.5,
+
+(.01, .01, .01), (1,2,2), (), (2.5, 2.5, 2.5), (), (.2, .2, .2), (.025, .025, .025), ()
+1, 1, 1, 1, 1, 1
+"Lead - Burst Fire", "Lead - Single Fire", "Uranium - Burst Fire", "Uranium - Single Fire", "AP - Single Fire", "BT - Single Fire"
+.10
+0
+30
+3
+"Pistol"
+
+"Shotgun"
+
+"Sniper"
+1.2, 3.5, 1.2, 3.5, 1.2, 3.5, 1.2, 3.5
+
+
+"Lead - Quick Fire", "Lead - Aim", 
+"Chaingun"
+
+"SMG"
+
+"Grenade Launcher"
+
+"Rocket Launcher"
+
+"Plasma Launcher"
+
+"Mine Thrower"
+
+"Railgun"
+
+"Flame Thrower"
+
+"Claws"
+
+"Fists"
+
+"Knife"
+
+"Chainsaw"
+
+"Sentry - Cannon"
+
+"Sentry - Extreme Auto"
+
+"Sentry - Flame Burner"

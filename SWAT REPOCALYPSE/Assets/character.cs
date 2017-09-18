@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class character : charClass {
 	// Use this for initialization
-	private abilityStore  [] abilityList;
+	private abilityStore  [] abilityAry; // !!! May need to remove
 
 	private delegate void setOrder(orderInfo myInfo);
-	private delegate float orderAction(target setTarget);
+	//private delegate float orderAction(target setTarget);
 
-	private int [] orderList;
+	private setOrder [] orderAry;
 	void Start () {
-		
+	}
+
+
+
+	public character(charClass myClass){
+
 	}
 	
 	// Update is called once per frame
@@ -32,13 +37,9 @@ public class character : charClass {
 	}
 		
 
-	private int shootTarget(enemy targEnemy){
+	//private int shootTarget(enemy targEnemy){
 		
-	}
-
-	private interface attackTypes{
-
-	}
+	//}
 
 	private class orderInfo{
 		private float posX;
@@ -48,6 +49,5 @@ public class character : charClass {
 
 
 	}
-
-
+		
 }
